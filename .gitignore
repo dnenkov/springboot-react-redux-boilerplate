@@ -1,0 +1,10 @@
+# Java
+target/
+*.class
+
+# Javascript
+node_modules/
+
+# IDEA
+.idea
+*.iml
