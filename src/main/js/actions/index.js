@@ -6,6 +6,8 @@ export const GET_TODOS_ERROR = 'GET_TODOS_ERROR';
 
 export const TOGGLE_TODO = 'TOGGLE_TODO';
 
+export const CHANGE_TODO_TEXT = 'CHANGE_TODO_TEXT';
+
 export const addTodo = (text, filter) => ({
   type: ADD_TODO,
   text,
@@ -31,4 +33,9 @@ export const toggleTodo = (todo, filter) => ({
   type: TOGGLE_TODO,
   todo,
   filter
+});
+
+export const changeTodoText = (text) => ({
+  type: CHANGE_TODO_TEXT,
+  text
 });

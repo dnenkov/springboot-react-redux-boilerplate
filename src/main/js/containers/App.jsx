@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from "react-redux";
 import AddTodo from "./AddTodo";
-import VisibleTodoList from "./VisibleTodoList";
 import Footer from "../components/Footer";
 import * as actions from "../actions"
 import {bindActionCreators} from "redux";
+import TodoList from "./TodoList";
 
 class App extends React.Component {
 
@@ -25,11 +25,10 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <AddTodo filter={this.getFilter()}/>
-        <VisibleTodoList filter={this.getFilter()}/>
+        <TodoList filter={this.getFilter()}/>
         <Footer />
       </div>
     )
