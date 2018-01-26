@@ -7,6 +7,8 @@ import Root from './components/Root';
 import rootSaga from './sagas';
 import createSagaMonitor from './monitor/sagaMonitor';
 
+import '../stylesheets/main.scss';
+
 const config = {
   level: 'log',
   actionDispatch: true

@@ -4,6 +4,7 @@ target/
 
 # Javascript
 node_modules/
+**/built/
 
 # IDEA
 .idea
