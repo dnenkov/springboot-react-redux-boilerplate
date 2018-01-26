@@ -38,7 +38,7 @@ public class TodosService {
 
     public List<Todo> getAll(boolean completed) {
         return todos.values().stream()
-                .filter(Todo::isCompleted)
+                .filter(todo -> todo.isCompleted() == completed)
                 .collect(toList());
     }
 

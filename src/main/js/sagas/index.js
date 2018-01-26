@@ -2,32 +2,29 @@ import { call, put, takeEvery} from 'redux-saga/effects';
 import * as actions from '../actions';
 import * as apis from '../apis';
 
-function* addTodo(action) {
+function* addTodo({text, filter}) {
   try {
-    const todo = yield call(apis.addTodoAPI, action.text);
-    yield put(actions.addTodoSuccess(todo));
-  } catch (error) {
-    yield put(actions.addTodoError(error));
+    yield call(apis.addTodoAPI, text);
+  } finally {
+    yield put(actions.getTodos(filter));
   }
 }
 
-function* getTodos() {
+function* getTodos({visibilityFilter}) {
   try {
-    const todos = yield call(apis.getTodosAPI);
+    const todos = yield call(apis.getTodosAPI, visibilityFilter);
     yield put(actions.getTodosSuccess(todos));
   } catch (error) {
     yield put(actions.getTodosError(error));
   }
 }
 
-function* toggleTodo({todo}) {
-  yield put(actions.updateTodo(todo));
+function* toggleTodo({todo, filter}) {
   try {
     todo.completed = !todo.completed;
-    const updatedTodo = yield call(apis.updateTodoAPI, todo);
-    yield put(actions.updateTodoSuccess(updatedTodo));
-  } catch (error) {
-    yield put(actions.updateTodoError(error));
+    yield call(apis.updateTodoAPI, todo);
+  } finally {
+    yield put(actions.getTodos(filter));
   }
 }
 

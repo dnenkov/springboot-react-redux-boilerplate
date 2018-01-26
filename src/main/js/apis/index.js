@@ -13,8 +13,8 @@ export function addTodoAPI(text) {
     .then(res => res.json());
 }
 
-export function getTodosAPI() {
-  return fetch(`/todos`).then(res => res.json());
+export function getTodosAPI(visibilityFilter) {
+  return fetch(`/todos/?visibilityFilter=${visibilityFilter}`).then(res => res.json());
 }
 
 export function updateTodoAPI(todo) {
