@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
 import {bindActionCreators} from "redux";
+import {injectIntl} from "react-intl";
 
 class AddTodo extends React.Component {
   handleChange(event) {
@@ -19,7 +20,7 @@ class AddTodo extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input type="text" value={this.props.changeText} onChange={this.handleChange.bind(this)}/>
-          <button type="submit">Add Todo</button>
+          <button type="submit">{this.props.intl.formatMessage({id: "add.todo"})}</button>
         </form>
       </div>
     );
@@ -38,4 +39,4 @@ function mapDispatchToProps(dispatch) {
 
 AddTodo = connect(mapStateToProps, mapDispatchToProps)(AddTodo);
 
-export default AddTodo;
+export default injectIntl(AddTodo);

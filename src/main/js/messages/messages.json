@@ -1,0 +1,7 @@
+{
+  "add.todo": "Add Todo",
+
+  "filter.active": "Active",
+  "filter.all": "All",
+  "filter.completed": "Completed"
+}

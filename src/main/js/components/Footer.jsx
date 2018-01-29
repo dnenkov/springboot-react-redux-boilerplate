@@ -1,5 +1,6 @@
 import React from 'react';
 import NavLink from "react-router-dom/es/NavLink";
+import {injectIntl} from "react-intl";
 
 class Footer extends React.Component {
   render() {
@@ -7,14 +8,14 @@ class Footer extends React.Component {
       <p>
         Show:
         {" "}
-        <NavLink to="/">All</NavLink>
+        <NavLink to="/">{this.props.intl.formatMessage({id: "filter.all"})}</NavLink>
         {", "}
-        <NavLink to="/ACTIVE">Active</NavLink>
+        <NavLink to="/ACTIVE">{this.props.intl.formatMessage({id: "filter.active"})}</NavLink>
         {", "}
-        <NavLink to="/COMPLETED">Completed</NavLink>
+        <NavLink to="/COMPLETED">{this.props.intl.formatMessage({id: "filter.completed"})}</NavLink>
       </p>
     );
   }
 }
 
-export default Footer;
+export default injectIntl(Footer);
