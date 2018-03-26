@@ -13,7 +13,10 @@ module.exports = {
   },
   devtool: "source-map",
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.css'],
+    modules: [
+      'node_modules'
+    ]
   },
   devServer: {
     hot: true,
@@ -24,7 +27,7 @@ module.exports = {
     }
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: [/\.js$/, /\.jsx$/],
         loader: 'babel-loader',

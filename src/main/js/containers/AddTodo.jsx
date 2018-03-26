@@ -10,7 +10,6 @@ class AddTodo extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log("Submitted");
     this.props.actions.addTodo(this.props.todoText, this.props.filter);
     this.props.actions.changeTodoText("");
     event.preventDefault();
