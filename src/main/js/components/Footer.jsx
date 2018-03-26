@@ -1,5 +1,5 @@
 import React from 'react';
-import NavLink from "react-router-dom/es/NavLink";
+import {NavLink} from "react-router-dom";
 import {injectIntl} from "react-intl";
 
 class Footer extends React.Component {

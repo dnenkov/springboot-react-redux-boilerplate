@@ -1,6 +1,6 @@
 import {CHANGE_TODO_TEXT} from "../actions";
 
-const changeText = (state = '', action) => {
+const todoText = (state = '', action) => {
   switch (action.type) {
     case CHANGE_TODO_TEXT:
       return action.text;
@@ -9,4 +9,4 @@ const changeText = (state = '', action) => {
   }
 };
 
-export default changeText;
+export default todoText;

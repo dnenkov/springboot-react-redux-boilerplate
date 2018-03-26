@@ -4,16 +4,20 @@
   "private": true,
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-jest": "^22.1.0",
     "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "fetch-mock": "^6.0.0",
+    "jest": "^22.1.4",
     "node-sass": "^4.7.2",
     "react-addons-test-utils": "^15.5.1",
     "react-intl": "^2.4.0",
-    "react-scripts": "^1.0.2",
+    "redux-mock-store": "^1.5.1",
     "redux-saga": "^0.16.0",
+    "redux-saga-tester": "^1.0.379",
     "sass-loader": "^6.0.6",
     "whatwg-fetch": "^2.0.3"
   },
@@ -25,7 +29,17 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.5.2"
   },
+  "jest": {
+    "moduleDirectories": [
+      "node_modules",
+      "src/main/js"
+    ],
+    "testMatch": [
+      "**/test/js/**/*Test.js?(x)"
+    ]
+  },
   "scripts": {
-    "dev": "webpack-dev-server --hot --watch -d"
+    "dev": "webpack-dev-server --hot --watch -d",
+    "test": "jest"
   }
 }

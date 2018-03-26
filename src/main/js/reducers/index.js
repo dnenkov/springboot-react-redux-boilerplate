@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
 import todos from './todos';
-import changeText from "./todoText";
+import todoText from "./todoText";
 
 const todoApp = combineReducers({
   todos,
-  changeText
+  todoText
 });
 
 export default todoApp;

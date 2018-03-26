@@ -10,7 +10,8 @@ class AddTodo extends React.Component {
   }
 
   handleSubmit(event) {
-    this.props.actions.addTodo(this.props.changeText, this.props.filter);
+    console.log("Submitted");
+    this.props.actions.addTodo(this.props.todoText, this.props.filter);
     this.props.actions.changeTodoText("");
     event.preventDefault();
   }
@@ -19,7 +20,7 @@ class AddTodo extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <input type="text" value={this.props.changeText} onChange={this.handleChange.bind(this)}/>
+          <input type="text" value={this.props.todoText} onChange={this.handleChange.bind(this)}/>
           <button type="submit">{this.props.intl.formatMessage({id: "add.todo"})}</button>
         </form>
       </div>
@@ -27,9 +28,9 @@ class AddTodo extends React.Component {
   }
 }
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
   return {
-    changeText: state.changeText
+    todoText: state.todoText
   }
 }
 

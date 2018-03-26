@@ -10,10 +10,10 @@ import defaultMessages from "../messages/messages.json";
 class Root extends React.Component {
   render() {
     return (
-      <IntlProvider locale={navigator.language} messages={defaultMessages}  >
+      <IntlProvider locale={navigator.language} messages={defaultMessages}>
         <Provider store={this.props.store}>
           <Router>
-            <Route path="/:filter?" component={App} />
+            <Route path="/:filter" component={App} />
           </Router>
         </Provider>
       </IntlProvider>
